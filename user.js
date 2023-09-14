@@ -1,4 +1,5 @@
 const express = require("express");
+const { loginUser } = require("./login_logic");
 
 const router = express.Router();
 
@@ -6,5 +7,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.json({ msg: "Home Page" });
 });
+
+router.post("/login", loginUser);
 
 module.exports = router;
