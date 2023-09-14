@@ -8,10 +8,10 @@ const loginUser = async (req, res) => {
 
     //const user = response.user;
 
-    res.status(200).json({ email, password });
+    res.status(200).json(response);
     //res.status(200).json({ email });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json(error.message);
   }
 };
 
