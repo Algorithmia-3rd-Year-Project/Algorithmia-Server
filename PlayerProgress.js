@@ -4,15 +4,16 @@ const fs = require("fs");
 
 //Create a new devlog
 const saveProgress = async (req, res) => {
-  //const { title, type, content } = req.body;
+  const { email, saveContent } = req.body;
 
-  const jsonFilePath =
-    "C:/Users/CHAMA COMPUTERS/AppData/LocalLow/DefaultCompany/Algorithmia/data.game";
-  const JSONContent = JSON.parse(fs.readFileSync(jsonFilePath, "utf-8"));
-  const content = JSON.stringify(JSONContent);
+  //const jsonFilePath =
+  ("C:/Users/CHAMA COMPUTERS/AppData/LocalLow/DefaultCompany/Algorithmia/data.game");
+  //const JSONContent = JSON.parse(fs.readFileSync(jsonFilePath, "utf-8"));
+  const content = JSON.stringify(saveContent);
 
   try {
     const playerProgress = await PlayerProgress.create({
+      email,
       content,
     });
     res.status(200).json(content);
