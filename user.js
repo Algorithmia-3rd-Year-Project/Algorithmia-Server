@@ -11,6 +11,6 @@ router.get("/", (req, res) => {
 
 router.post("/login", loginUser);
 
-router.get("/playersave", saveProgress);
+router.post("/playersave", saveProgress);
 
 module.exports = router;
