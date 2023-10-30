@@ -1,10 +1,10 @@
 const User = require("./models/User_Model");
 
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
-    const response = await User.login(email, password);
+    const response = await User.login(username, password);
 
     //const user = response.user;
 
